@@ -4,6 +4,7 @@ import Tasks from "./components/Tasks";
 import { useState } from "react";
 
 const App = () => {
+	//state
 	const [tasks, setTasks] = useState([
 		{
 			id: 1,
@@ -21,13 +22,18 @@ const App = () => {
 
 	//Delete task
 	const deleteTask = (id) => {
-		console.log("delete", id);
+		setTasks(tasks.filter((task) => task.id !== id));
 	};
 
+	//render
 	return (
 		<div className="container">
 			<Header title="Task Tracker" />
-			<Tasks tasks={tasks} />
+			{tasks.length > 0 ? (
+				<Tasks tasks={tasks} onDelete={deleteTask} />
+			) : (
+				"No Tasks to Show"
+			)}
 		</div>
 	);
 };
