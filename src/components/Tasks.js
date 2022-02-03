@@ -1,22 +1,13 @@
-const tasks = [{
-    id:1,
-    text: "Appointment",
-    day: "Feb 2 at 4pm",
-    reminder: true,
-},
-{
-    id: 2,
-    text: "Visit",
-    day: "Feb 9th at 6pm",
-    reminder: false
-}]
+import Task from "./Task";
 
-const Tasks = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const Tasks = ({ tasks }) => {
+	return (
+		<>
+			{tasks.map((task) => (
+				<Task key={task.id} task={task} />
+			))}
+		</>
+	);
+};
 
-export default Tasks
+export default Tasks;
