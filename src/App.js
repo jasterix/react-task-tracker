@@ -18,6 +18,12 @@ const App = () => {
 			reminder: false,
 		},
 	]);
+
+	//Delete task
+	const deleteTask = (id) => {
+		console.log("delete", id);
+	};
+
 	return (
 		<div className="container">
 			<Header title="Task Tracker" />
